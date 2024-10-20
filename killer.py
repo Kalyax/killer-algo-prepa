@@ -1,5 +1,5 @@
 #Dernière mise à jour: 2024
-from random import choices
+from random import choices, shuffle
 
 #CRITERE D'ESPACEMENT ENTRE ELEVES D'UNE MEME CLASSE DANS LA BOUCLE
 CONST_TAILLE_MIN = 4
@@ -154,6 +154,9 @@ def read_config_csv():
             nom_classes.append(classe)
             taille_classes.append(1)
             nom_joueur_classes.append([nom])
+
+    #on mélange les noms dans chaque classes pour rajouter de l'aléatoire (éviter d'avoir une boucle dans l'ordre alphabétique...)
+    map(shuffle, nom_joueur_classes)
     
     return index_classes, nom_classes, taille_classes, nom_joueur_classes
 
