@@ -155,7 +155,7 @@ def build_boucle_csv(boucle, index_classes, nom_classes, nom_joueur_classes):
     Entrée:
     - Idem aux autres fonctions...
 
-    Construit le fichier boucle.csv, qui correspond à la boucle et où chaque élève à une cible assignée.
+    Construit le fichier boucle.csv, qui correspond à la boucle et où chaque élève a une cible assignée.
     """
 
     #format du tableau csv
