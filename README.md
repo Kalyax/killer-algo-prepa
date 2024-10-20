@@ -10,4 +10,4 @@ Vous pouvez ensuite lancer l'algorithme, lequel devrait créer un fichier `boucl
 
 ## Tests
 Le fichier `util.py` permet de générer un fichier `config.csv` avec des noms aléatoires. Il y a besoin de la librarie suivante:
-``pip install names_generator``
+```pip install names_generator```
