@@ -1,12 +1,10 @@
-"""
-Dernière mise à jour: 2024
-Si problème, contactez moi sur Github: @Kalyax
-"""
-
+#Dernière mise à jour: 2024
 from random import choices
 
 #CRITERE D'ESPACEMENT ENTRE ELEVES D'UNE MEME CLASSE DANS LA BOUCLE
 CONST_TAILLE_MIN = 4
+
+
 
 def choisir_classes(classes_possibles, taille_classes):
     """
@@ -30,7 +28,7 @@ def choisir_classes(classes_possibles, taille_classes):
         classes_possibles.remove(classe_choisie)
 
     return liste_choix
-        
+
 
 def creer_boucle(boucle, index_classes, taille_classes):
     """
@@ -79,12 +77,21 @@ def creer_boucle(boucle, index_classes, taille_classes):
     return False, boucle
     
 
-#FAUSSE A REFAIRE
 def test_segement(boucle, classe_id):
+    """
+    Entrée:
+    - boucle: list: boucle à tester
+    - classe_id: numéro de classe pour lequel on vérifie si l'insertion est possible en fin de la liste boucle (dépends du critère CONST_TAILLE_MIN)
+    
+    Sortie:
+    - bool: si on peut insérer classe_id à la fin de boucle
+    """
     n = len(boucle)
     for i in range(1, CONST_TAILLE_MIN):
+        #si n-i est négatif, l'indice -i n'existe pas donc on ignore ce cas
         if i > n:
             continue
+        #sinon on verifie si on retrouve le même classe_id à l'indice -i (on part de la fin de la liste)
         if boucle[-i] == classe_id:
             return False
     return True
@@ -113,6 +120,7 @@ def test_boucle(boucle, taille_classes):
                 print("ERREUR: La boucle ne vérifie pas le critère CONST_TAILLE_MIN")
                 return False
     return True
+
 
 def read_config_csv():
     """
@@ -182,6 +190,7 @@ def build_boucle_csv(boucle, index_classes, nom_classes, nom_joueur_classes):
     f = open("boucle.csv", "w")
     f.write(texte)
     f.close()
+
 
 
 #on lit le fichier config.csv et on recupère les variables
