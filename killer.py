@@ -3,7 +3,11 @@ from random import choices, shuffle
 
 #CRITERE D'ESPACEMENT ENTRE ELEVES D'UNE MEME CLASSE DANS LA BOUCLE
 CONST_TAILLE_MIN = 4
+APPEL_MAX = 1_000_000
+INFO_CLASSE = False
 
+
+nb_appel = 0
 
 
 def choisir_classes(classes_possibles, taille_classes):
@@ -16,6 +20,8 @@ def choisir_classes(classes_possibles, taille_classes):
     """
     
     liste_choix = []
+
+    #classes_possibles.sort(key=lambda i: taille_classes[i])
 
     #tant qu'il reste des classes possibles à choisir on continue
     while len(classes_possibles) != 0:
@@ -43,6 +49,11 @@ def creer_boucle(boucle, index_classes, taille_classes):
     La boucle finale NE respecte PAS FORCEMENT le critère CONST_TAILLE_MIN
     Si le code ne semble pas terminer au bout de plusieurs minutes, le relancer.
     """
+
+    global nb_appel
+    nb_appel += 1
+    if nb_appel >= APPEL_MAX:
+        return False, []
 
     #on fait la liste des classes non vide, celles pour lesquelles on peut encore ajouter des élèves à la boucle
     classes_non_vide = [i for i in index_classes if taille_classes[i] != 0]
@@ -97,7 +108,7 @@ def test_segement(boucle, classe_id):
     return True
 
 
-def test_boucle(boucle, taille_classes):
+def test_boucle(boucle, taille_classes, nom_classe):
     """
     Entrée:
     - boucle: list: boucle à tester
@@ -118,6 +129,7 @@ def test_boucle(boucle, taille_classes):
         for k in range(1,CONST_TAILLE_MIN) :
             if boucle[i] == boucle[i-k]:
                 print("ERREUR: La boucle ne vérifie pas le critère CONST_TAILLE_MIN")
+                #print(nom_classe[boucle[i]] + str(i))
                 return False
     return True
 
@@ -181,7 +193,7 @@ def build_boucle_csv(boucle, index_classes, nom_classes, nom_joueur_classes):
         joueur = nom_joueur_classes[id_classe_joueur][compteur_classes[id_classe_joueur]]
         cible = nom_joueur_classes[id_classe_cible][compteur_classes[id_classe_cible]]
         compteur_classes[id_classe_joueur] += 1
-        texte += joueur + "," + cible + "\n"
+        texte += joueur + "," + cible + "\n" if not INFO_CLASSE else joueur + "|" + nom_classes[id_classe_joueur] + "," + cible + "|" + nom_classes[id_classe_cible] + "\n"
 
     #on complète la boucle, on donne au dernier élève le premier élève comme cible
     id_classe_joueur = boucle[len(boucle)-1]
@@ -202,12 +214,14 @@ index_classes, nom_classes, taille_classes, nom_joueur_classes = read_config_csv
 #on crée la boucle
 trouve, boucle = creer_boucle([], index_classes, taille_classes)
 
+print("Nombre d'appels :", nb_appel)
+
 #si trouve est faux, il y a eu une erreur
 if not trouve:
     print("ERREUR: La boucle n'a pas pu être formée")
 else:
     #on teste la validité de la boucle, se réferer à la fonction test_boucle pour voir ce qu'elle teste
-    test_boucle(boucle, taille_classes)
+    test_boucle(boucle, taille_classes, nom_classes)
 
     #on construit le fichier boucle.csv
     build_boucle_csv(boucle, index_classes, nom_classes, nom_joueur_classes)
