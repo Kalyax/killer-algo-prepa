@@ -3,8 +3,8 @@ from random import choices, shuffle
 
 #CRITERE D'ESPACEMENT ENTRE ELEVES D'UNE MEME CLASSE DANS LA BOUCLE
 CONST_TAILLE_MIN = 4
-APPEL_MAX = 1_000_000
-INFO_CLASSE = False
+APPEL_MAX = 100_000
+INFO_CLASSE = True
 
 
 nb_appel = 0
@@ -114,7 +114,7 @@ def test_boucle(boucle, taille_classes, nom_classe):
     - boucle: list: boucle à tester
     - taille_classes: list: liste des nombres d'élèves par classe restante
     Sortie:
-    - bool: la boucle est-elle valide?
+    - bool: False si la boucle n'est pas valide
 
     On teste si toutes les classes sont bien vide et si la boucle respecte le critère CONST_TAILLE_MIN
     """
@@ -210,19 +210,22 @@ def build_boucle_csv(boucle, index_classes, nom_classes, nom_joueur_classes):
 
 #on lit le fichier config.csv et on recupère les variables
 index_classes, nom_classes, taille_classes, nom_joueur_classes = read_config_csv ()
+mem_taille_classes = taille_classes.copy()
+
+trouve = False
 
 #on crée la boucle
-trouve, boucle = creer_boucle([], index_classes, taille_classes)
-
-print("Nombre d'appels :", nb_appel)
-
-#si trouve est faux, il y a eu une erreur
-if not trouve:
-    print("ERREUR: La boucle n'a pas pu être formée")
-else:
+#si trouve est faux, il y a eu une erreur, on réessaie
+while not trouve:
+    trouve, boucle = creer_boucle([], index_classes, taille_classes)
+    #print("Nombre d'appels :", nb_appel)
     #on teste la validité de la boucle, se réferer à la fonction test_boucle pour voir ce qu'elle teste
-    test_boucle(boucle, taille_classes, nom_classes)
+    if not trouve or not test_boucle(boucle, taille_classes, nom_classes) or len(boucle) == 0:
+        nb_appel = 0
+        trouve = False
+        taille_classes = mem_taille_classes.copy()
+        print("ERREUR: La boucle n'a pas pu être formée, on réessaie...")
 
-    #on construit le fichier boucle.csv
-    build_boucle_csv(boucle, index_classes, nom_classes, nom_joueur_classes)
-    print("Boucle construite dans boucle.csv")
+#on construit le fichier boucle.csv
+build_boucle_csv(boucle, index_classes, nom_classes, nom_joueur_classes)
+print("Boucle construite dans boucle.csv")
