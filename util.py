@@ -5,7 +5,7 @@
 #pip install names_generator
 from names_generator import generate_name
 
-f = open("config.csv", "w")
+f = open("config.txt", "w")
 
 index_classes = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 nom_classes = ["MPSI", "PCSI", "MP2I", "ECG1", "ECG2", "HK", "KH", "MP", "MPI", "PC", "PSI"]
