@@ -1,0 +1,11 @@
+config.txt
+boucle.txt
+cartes.tex
+
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+cartes.pdf
+*.synctex(busy)
+*.synctex.gz

@@ -1,0 +1,75 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{graphicx}
+
+\newcounter{numcards}
+
+\title{Algorithme du Killer}
+\date{ }
+
+\begin{document} 
+\maketitle
+
+Pour utiliser l'algorithme vous avez besoin de Python 3 et d'une connection internet.
+
+\section{Configuration de l'algorithme}
+
+
+Rennomez le fichier "config\_exemple.txt" en "config.txt".
+Le fichier se présente sous forme de tableau à deux colonnes "Classe" et "Joueur". 
+Chaque retour à la ligne represente une ligne du tableau et on sépare la classe et le nom du joueur sur une même ligne par une virgule.
+\newline
+
+Vous trouverez à l'intérieur une liste de faux noms pour vous donnez un exemple. 
+Commencez par tous les supprimer (sauf la première ligne avec Classe et Joueur) pour ensuite ajouter vos joueurs ainsi que leur classe.
+
+\section{Lancer l'algorithme}
+
+Assurez vous que le fichier "config.txt" soit dans le même dossier que l'algorithme (c'est à dire "killer.py").
+
+Si vous êtes sur Windows, lancez le fichier "lancer\_windows.bat" en double cliquant dessus.
+
+Si vous êtes sur Linux ou MacOS, ouvrez un terminal et placez vous dans le répertoire "killer-algo-prepa" (en utilisant la commande cd).
+Exécutez en suite la commande "sh lancer\_mac\_linux.sh".
+\newline
+
+Un fichier "boucle.txt" devrait se créer ainsi qu'un fichier "cartes.tex".
+Le premier contient la boucle où chaque joueur à une cible assignée. 
+Conservez précieusement ce fichier.
+
+\section{Générer les cartes}
+
+Si vous avez LaTeX sur votre ordinateur, générez les cartes à l'aide du fichier "cartes.tex" généré par l'algorithme.
+(Notez que le fichier "logo.png" doit être dans le même dossier lors de la génération)
+\newline
+
+Sinon, créez vous un compte sur https://www.overleaf.com/login.
+Une fois connecté, créez un nouveau projet vide ("Blank project").
+Importez les fichiers "cartes.tex" et "logo.png" dans l'éditeur avec le boutton "Upload" en haut
+à gauche de l'écran (une sorte de rectangle avec une flèche vers le haut).
+Vous pouvez soit cliquer sur "Select files" et sélectionner les fichiers ou bien vous pouvez les glisser sur la fenêtre.
+\newline
+
+Cliquez alors sur le fichier "cartes.tex" à gauche de votre écran.
+Dans la deuxième fenêtre à droite, vous devriez avoir un boutton vert "Recompile".
+Cliquez dessus et vos cartes se genèreront. Il ne vous reste plus qu'à les télécharger avec
+le deuxième boutton juste à droite de "Recompile".
+
+
+\section{Imprimer les cartes}
+
+Une fois le PDF téléchargé, il faut l'imprimer en recto-verso en activant l'option 
+"retourner sur les bords longs"
+pour ne pas avoir de problèmes lors de l'impression.
+\newline
+
+Vous avez aussi un fichier "cartes\_arbitre.pdf" à disposition avec des cartes d'arbitres que vous pouvez distribuer.
+\newline
+
+Il ne vous reste plus qu'à couper les cartes et les distribuer. Bon jeu!
+
+\section{Ancien algorithme}
+
+En cas de besoin, vous trouverez l'ancien algorithme dans le fichier "ancien\_algorithme".
+
+
+\end{document}

@@ -143,14 +143,14 @@ def read_config_csv():
     - taille_classes: list: liste du nombre d'élèves par classe, le nombre d'élèves dans la classe i est à l'indice i: (exemple s'il y a 3 classes: [48, 24, 32])
     - nom_joueur_classes: list of lists: liste de listes des noms de chaque élèves par classes (idem pour les indices)
 
-    Lis le fichier config.csv où se trouvent les noms de tous les participants ainsi que leur classe et renvoie les données dans 4 variables
+    Lis le fichier config.txt où se trouvent les noms de tous les participants ainsi que leur classe et renvoie les données dans 4 variables
     """
     index_classes = []
     nom_classes = []
     taille_classes = []
     nom_joueur_classes = []
 
-    f = open("config.csv", "r")
+    f = open("config.txt", "r")
     joueurs = f.read().split("\n")
 
     for i in range(1,len(joueurs)-1):
@@ -178,7 +178,7 @@ def build_boucle_csv(boucle, index_classes, nom_classes, nom_joueur_classes):
     Entrée:
     - Idem aux autres fonctions...
 
-    Construit le fichier boucle.csv, qui correspond à la boucle et où chaque élève a une cible assignée.
+    Construit le fichier boucle.txt, qui correspond à la boucle et où chaque élève a une cible assignée.
     """
 
     #format du tableau csv
@@ -202,13 +202,13 @@ def build_boucle_csv(boucle, index_classes, nom_classes, nom_joueur_classes):
     cible = nom_joueur_classes[id_classe_cible][0]
     texte += joueur + "," + cible
     
-    f = open("boucle.csv", "w")
+    f = open("boucle.txt", "w")
     f.write(texte)
     f.close()
 
 
 
-#on lit le fichier config.csv et on recupère les variables
+#on lit le fichier config.txt et on recupère les variables
 index_classes, nom_classes, taille_classes, nom_joueur_classes = read_config_csv ()
 mem_taille_classes = taille_classes.copy()
 
@@ -226,6 +226,6 @@ while not trouve:
         taille_classes = mem_taille_classes.copy()
         print("ERREUR: La boucle n'a pas pu être formée, on réessaie...")
 
-#on construit le fichier boucle.csv
+#on construit le fichier boucle.txt
 build_boucle_csv(boucle, index_classes, nom_classes, nom_joueur_classes)
-print("Boucle construite dans boucle.csv")
+print("Boucle construite dans boucle.txt")

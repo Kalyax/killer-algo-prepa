@@ -2,6 +2,8 @@
 Algorithme générant une boucle pour le jeu du Killer
 
 ## Utilisation
+Lire le PDF `LISEZ_MOI.pdf` pour utiliser l'algorithme
+
 Vous devez remplire le fichier `config.csv` avec les classes et nom de chaque participants.
 Le fichier se présente sous forme de tableau à deux colonnes `Classe` et `Joueur`. 
 Chaque retour à la ligne represente une ligne du tableau et on sépare la classe et le nom du joueur sur une même ligne par une virgule.
