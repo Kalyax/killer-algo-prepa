@@ -10,3 +10,4 @@ encrypt.txt
 cartes.pdf
 *.synctex(busy)
 *.synctex.gz
+*.out

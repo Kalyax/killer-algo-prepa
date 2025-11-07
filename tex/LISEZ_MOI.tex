@@ -2,6 +2,7 @@
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
+\usepackage{hyperref}
 
 \newcounter{numcards}
 
@@ -14,112 +15,110 @@
 
 Vous pouvez trouver la dernière version de l'algorithme ainsi 
 que l'ensemble des fichiers à l'adresse :
-\\{https://github.com/Kalyax/killer-algo-prepa}
-\\(vous pouvez aussi l'utiliser pour me contacter si besoin)
+\newline
+\url{https://github.com/Kalyax/killer-algo-prepa}
+\newline
+(vous pouvez aussi l'utiliser pour me contacter si besoin.)
 \newline
 
-Vous trouverez dans ce dossier l'algorithme du Killer, une explication pour l'utiliser (ce PDF) et un dossier "pdf" avec les règles.
-Pensez à modifier les règles pour rajouter les jursiprudences de l'année dernière si besoin.
+Vous trouverez dans ce dossier l'algorithme du Killer, une explication pour l'utiliser (ce PDF) et un dossier « pdf » avec les règles.
+Pensez à modifier les règles pour ajouter la jurisprudence de l'année dernière si besoin.
 \newline
 
-Pour utiliser l'algorithme vous avez besoin de Python 3 et d'une connection internet.
+Pour utiliser l'algorithme, vous avez besoin de Python 3 et d'une connexion Internet.
 
 \section{Configuration de l'algorithme}
 
-
-Rennomez le fichier "config\_exemple.txt" en "config.txt".
-Le fichier se présente sous forme de tableau à deux colonnes "Classe" et "Joueur". 
-Chaque retour à la ligne represente une ligne du tableau et on sépare la classe et le nom du joueur sur une même ligne par une virgule.
+Renommez le fichier \texttt{config\_exemple.txt} en \texttt{config.txt}.
+Le fichier se présente sous la forme d'un tableau à deux colonnes : « Classe » et « Joueur ». 
+Chaque retour à la ligne représente une ligne du tableau et on sépare la classe et le nom du joueur sur la même ligne par une virgule.
 \newline
 
-Vous trouverez à l'intérieur une liste de faux noms pour vous donnez un exemple. 
-Commencez par tous les supprimer (sauf la première ligne avec Classe et Joueur) pour ensuite ajouter vos joueurs ainsi que leur classe.
+Vous trouverez à l'intérieur une liste de faux noms pour vous donner un exemple. 
+Commencez par tous les supprimer (sauf la première ligne avec « Classe » et « Joueur »), puis ajoutez vos joueurs ainsi que leur classe.
 
 \section{Lancer l'algorithme}
 
-Assurez vous que le fichier "config.txt" soit dans le même dossier que l'algorithme (c'est à dire "killer.py").
+Assurez-vous que le fichier \texttt{config.txt} se trouve dans le même dossier que l'algorithme (c'est-à-dire \texttt{killer.py}).
 \newline
 
-Si vous êtes sur Windows, lancez le fichier "lancer\_windows.bat" en double cliquant dessus.
+Si vous êtes sur Windows, lancez le fichier \texttt{lancer\_windows.bat} en double-cliquant dessus.
 
-Si vous êtes sur Linux ou MacOS, ouvrez un terminal et placez vous dans le répertoire "killer-algo-prepa" (en utilisant la commande cd).
-Exécutez en suite la commande "sh lancer\_mac\_linux.sh".
+Si vous êtes sur Linux ou macOS, ouvrez un terminal et placez-vous dans le répertoire \texttt{killer-algo-prepa} (en utilisant la commande \texttt{cd}).
+Exécutez ensuite la commande \texttt{sh lancer\_mac\_linux.sh}.
 \newline
 
-Un fichier "boucle.txt" devrait se créer ainsi qu'un fichier "cartes.tex".
-Le premier contient la boucle où chaque joueur à une cible assignée. 
+Un fichier \texttt{boucle.txt} devrait se créer ainsi qu'un fichier \texttt{cartes.tex}.
+Le premier contient la boucle où chaque joueur a une cible assignée. 
 Conservez précieusement ce fichier.
+Le deuxième contient un code permettant de générer les cartes.
 
 \section{Générer les cartes}
 
-Si vous avez LaTeX sur votre ordinateur, générez les cartes à l'aide du fichier "cartes.tex" généré par l'algorithme.
-(Notez que le fichier "logo.png" doit être dans le même dossier lors de la génération)
+Si vous avez \LaTeX ~ sur votre ordinateur, générez les cartes à l'aide du fichier \texttt{cartes.tex} généré par l'algorithme.
+(Notez que le fichier \texttt{logo.png} doit être dans le même dossier lors de la génération.)
 \newline
 
-Sinon, créez vous un compte sur https://www.overleaf.com/login.
-Une fois connecté, créez un nouveau projet vide ("Blank project").
-Importez les fichiers "cartes.tex" et "logo.png" dans l'éditeur avec le boutton "Upload" en haut
+Sinon, créez un compte sur \url{https://www.overleaf.com/login}.
+Une fois connecté, créez un nouveau projet vide (« Blank project »).
+Importez les fichiers \texttt{cartes.tex} et \texttt{logo.png} dans l'éditeur avec le bouton « Upload » en haut
 à gauche de l'écran (une sorte de rectangle avec une flèche vers le haut).
-Vous pouvez soit cliquer sur "Select files" et sélectionner les fichiers ou bien vous pouvez les glisser sur la fenêtre.
+Vous pouvez soit cliquer sur « Select files » et sélectionner les fichiers, soit les glisser dans la fenêtre.
 \newline
 
-Cliquez alors sur le fichier "cartes.tex" à gauche de votre écran.
-Dans la deuxième fenêtre à droite, vous devriez avoir un boutton vert "Recompile".
-Cliquez dessus et vos cartes se genèreront. Il ne vous reste plus qu'à les télécharger avec
-le deuxième boutton juste à droite de "Recompile".
-
+Cliquez alors sur le fichier \texttt{cartes.tex} à gauche de votre écran.
+Puis dans la deuxième fenêtre à droite de votre écran, vous devriez avoir un bouton vert « Recompile » vers le haut de la fenêtre.
+Cliquez dessus et vos cartes seront générées. Il ne vous reste plus qu'à les télécharger avec
+le deuxième bouton juste à droite de « Recompile ».
 
 \section{Imprimer les cartes}
 
 Une fois le PDF téléchargé, il faut l'imprimer en recto-verso en activant l'option 
-"retourner sur les bords longs"
+« retourner sur les bords longs »
 pour ne pas avoir de problèmes lors de l'impression.
-Une fois imprimé, il est souhaitable de supprimer les fichiers "cartes.pdf" et "cartes.tex" pour des
-questions de sécurité. Il est toujours possible de les regénérer avec le script "latex.py" si le fichier "boucle.txt"
-se trouve dans le même dossier que ce dernier. 
-(en utilisant les script "cartes\_windows.bat" ou "cartes\_mac\_linux.sh" prévus à cet effet)
+Une fois imprimé, il est souhaitable de supprimer les fichiers \texttt{cartes.pdf} et \texttt{cartes.tex} pour des
+questions de sécurité. Il est toujours possible de les régénérer en utilisant les scripts \texttt{cartes\_windows.bat} ou \texttt{cartes\_mac\_linux.sh} prévus à cet effet
+si le fichier \texttt{boucle.txt}
+se trouve dans le même dossier que ces derniers. 
 \newline
 
-Vous avez aussi un fichier "cartes\_arbitre.pdf" à disposition dans le dossier "pdf" avec des cartes d'arbitres que vous pouvez distribuer.
+Vous avez aussi un fichier \texttt{cartes\_arbitre.pdf} à disposition dans le dossier \texttt{pdf} avec des cartes d'arbitres que vous pouvez distribuer.
 \newline
 
-Il ne vous reste plus qu'à couper les cartes et les distribuer. Bon jeu!
+Il ne vous reste plus qu'à couper les cartes et les distribuer. Bon jeu !
 
 \section{Chiffrage de la boucle}
 
 Suite aux incidents de 2024, vous avez désormais un moyen de chiffrer la boucle si vous le souhaitez.
-Cette partie est optionelle mais recommandée pour des questions de sécurité pour le bon déroulement du jeu.
-La méthode possède des failles mais rajoute une couche de sécurité.
+Cette partie est optionnelle mais recommandée pour des raisons de sécurité et pour le bon déroulement du jeu.
+La méthode possède des failles mais ajoute une couche de sécurité.
 \newline
 
-Cette sécurité nécéssite deux personnes : le maître du jeu qui possède l'algorithme et la boucle chiffrée sur
-son ordinateur et l'arbitre principal qui est le seul à connaître le mot de passe. En aucun cas l'un doit posseder les deux.
+Cette sécurité nécessite deux personnes : le maître du jeu, qui possède l'algorithme et la boucle chiffrée sur
+son ordinateur, et l'arbitre principal, qui est le seul à connaître le mot de passe. En aucun cas l'un ne doit posséder les deux.
 Il est préférable que ces deux personnes ne se connaissent pas forcément au préalable pour éviter la triche.
 \newline
 
-Vous disposez de deux script "chiffrage\_windows.bat" et "chiffrage\_mac\_linux.sh" selon 
-votre platforme pour chiffrer la boucle.
-Ils s'éxécutent de la même manière que décrit précédament.
+Vous disposez de deux scripts \texttt{chiffrage\_windows.bat} et \texttt{chiffrage\_mac\_linux.sh} selon 
+votre plateforme pour chiffrer la boucle.
+Ils s'exécutent de la même manière que décrit précédemment.
 \newline
 
 Le script commence par vous demander un mot de passe. Si vous chiffrez pour la première fois la boucle, inventez un mot de passe.
 Si vous souhaitez déchiffrer, renseignez le mot de passe utilisé lors du chiffrement.
-Vous avez alors le choix entre les deux options en écrivant "1" ou "2" comme expliqué lors de l'exécution du script.
+Vous avez alors le choix entre deux options en écrivant « 1 » ou « 2 » comme expliqué lors de l'exécution du script.
 \newline
 
-Si vous chiffrez, le fichier "boucle.txt" doit être présent dans le dossier et un fichier "encrypt.txt" sera créé et le fichier "boucle.txt" SERA SUPPRIME. Il faut donc faire attention de
-ne pas supprimer le fichier "encrypt.txt" pour ne pas perdre la boucle.
+Si vous chiffrez, le fichier \texttt{boucle.txt} doit être présent dans le dossier ; un fichier \texttt{encrypt.txt} sera créé et le fichier \texttt{boucle.txt} sera supprimé. Il faut donc faire attention à
+ne pas supprimer le fichier \texttt{encrypt.txt} pour ne pas perdre la boucle.
 \newline
 
-Si vous déchiffrez, le fichier "encrypt.txt" doit être présent dans le dossier et un fichier "boucle.txt" sera créé.
-Il est souhaitable de supprimer le fichier "boucle.txt" après toute utilisation par les arbitres pour
+Si vous déchiffrez, le fichier \texttt{encrypt.txt} doit être présent dans le dossier et un fichier \texttt{boucle.txt} sera créé.
+Il est souhaitable de supprimer le fichier \texttt{boucle.txt} après toute utilisation par les arbitres pour
 que personne n'ait accès à la boucle sans la réunion du maître du jeu et de l'arbitre principal.
-
-
 
 \section{Ancien algorithme}
 
-En cas de besoin, vous trouverez l'ancien algorithme dans le fichier "ancien\_algorithme".
-
+En cas de besoin, vous trouverez l'ancien algorithme dans le fichier \texttt{ancien\_algorithme}.
 
 \end{document}
