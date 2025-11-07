@@ -125,9 +125,10 @@ def test_boucle(boucle, taille_classes, nom_classe):
             return False
 
     #On teste si la boucle vérifie le critère CONST_TAILLE_MIN
-    for i in range(len(boucle)):
+    len_boucle = len(boucle)
+    for i in range(len_boucle):
         for k in range(1,CONST_TAILLE_MIN) :
-            if boucle[i] == boucle[i-k]:
+            if boucle[i] == boucle[(i-k)]:
                 print("ERREUR: La boucle ne vérifie pas le critère CONST_TAILLE_MIN")
                 #print(nom_classe[boucle[i]] + str(i))
                 return False
@@ -200,7 +201,7 @@ def build_boucle_csv(boucle, index_classes, nom_classes, nom_joueur_classes):
     id_classe_cible = boucle[0]
     joueur = nom_joueur_classes[id_classe_joueur][compteur_classes[id_classe_joueur]]
     cible = nom_joueur_classes[id_classe_cible][0]
-    texte += joueur + "," + cible
+    texte += joueur + "," + cible + "\n" if not INFO_CLASSE else joueur + "|" + nom_classes[id_classe_joueur] + "," + cible + "|" + nom_classes[id_classe_cible] + "\n"
     
     f = open("boucle.txt", "w")
     f.write(texte)
