@@ -1,6 +1,7 @@
 config.txt
 boucle.txt
 cartes.tex
+encrypt.txt
 
 *.aux
 *.fdb_latexmk

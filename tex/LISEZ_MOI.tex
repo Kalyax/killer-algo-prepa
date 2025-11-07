@@ -74,6 +74,10 @@ le deuxième boutton juste à droite de "Recompile".
 Une fois le PDF téléchargé, il faut l'imprimer en recto-verso en activant l'option 
 "retourner sur les bords longs"
 pour ne pas avoir de problèmes lors de l'impression.
+Une fois imprimé, il est souhaitable de supprimer les fichiers "cartes.pdf" et "cartes.tex" pour des
+questions de sécurité. Il est toujours possible de les regénérer avec le script "latex.py" si le fichier "boucle.txt"
+se trouve dans le même dossier que ce dernier. 
+(en utilisant les script "cartes\_windows.bat" ou "cartes\_mac\_linux.sh" prévus à cet effet)
 \newline
 
 Vous avez aussi un fichier "cartes\_arbitre.pdf" à disposition dans le dossier "pdf" avec des cartes d'arbitres que vous pouvez distribuer.
@@ -81,11 +85,37 @@ Vous avez aussi un fichier "cartes\_arbitre.pdf" à disposition dans le dossier 
 
 Il ne vous reste plus qu'à couper les cartes et les distribuer. Bon jeu!
 
-\section{Règles pour le maître du jeu}
+\section{Chiffrage de la boucle}
 
-Pour éviter les mêmes incidents que l'année 2024, le maître du jeu à l'interdiction de
-mettre les fichiers contenant la boucle ou les cartes sur son téléphone. Ils doivent impérativement rester
-sur son ordinateur.
+Suite aux incidents de 2024, vous avez désormais un moyen de chiffrer la boucle si vous le souhaitez.
+Cette partie est optionelle mais recommandée pour des questions de sécurité pour le bon déroulement du jeu.
+La méthode possède des failles mais rajoute une couche de sécurité.
+\newline
+
+Cette sécurité nécéssite deux personnes : le maître du jeu qui possède l'algorithme et la boucle chiffrée sur
+son ordinateur et l'arbitre principal qui est le seul à connaître le mot de passe. En aucun cas l'un doit posseder les deux.
+Il est préférable que ces deux personnes ne se connaissent pas forcément au préalable pour éviter la triche.
+\newline
+
+Vous disposez de deux script "chiffrage\_windows.bat" et "chiffrage\_mac\_linux.sh" selon 
+votre platforme pour chiffrer la boucle.
+Ils s'éxécutent de la même manière que décrit précédament.
+\newline
+
+Le script commence par vous demander un mot de passe. Si vous chiffrez pour la première fois la boucle, inventez un mot de passe.
+Si vous souhaitez déchiffrer, renseignez le mot de passe utilisé lors du chiffrement.
+Vous avez alors le choix entre les deux options en écrivant "1" ou "2" comme expliqué lors de l'exécution du script.
+\newline
+
+Si vous chiffrez, le fichier "boucle.txt" doit être présent dans le dossier et un fichier "encrypt.txt" sera créé et le fichier "boucle.txt" SERA SUPPRIME. Il faut donc faire attention de
+ne pas supprimer le fichier "encrypt.txt" pour ne pas perdre la boucle.
+\newline
+
+Si vous déchiffrez, le fichier "encrypt.txt" doit être présent dans le dossier et un fichier "boucle.txt" sera créé.
+Il est souhaitable de supprimer le fichier "boucle.txt" après toute utilisation par les arbitres pour
+que personne n'ait accès à la boucle sans la réunion du maître du jeu et de l'arbitre principal.
+
+
 
 \section{Ancien algorithme}
 
