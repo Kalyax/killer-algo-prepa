@@ -2,4 +2,4 @@
 
 echo "[Chiffrage de la boucle]"
 
-py encrypt.py
+python3 encrypt.py

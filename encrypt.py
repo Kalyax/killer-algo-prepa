@@ -18,7 +18,7 @@ kdf = PBKDF2HMAC(
 )
 key = base64.urlsafe_b64encode(kdf.derive(password))
 f = Fernet(key)
-print(key)
+
 try:
     boucle_f = None
     encrypt_f = None
