@@ -5,10 +5,11 @@ from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.exceptions import InvalidSignature
 from cryptography.fernet import InvalidToken
+from getpass import getpass
 
 print("Si vous souhaitez chiffrer, inventez un mot de passe")
 print("Si vous souhaitez déchiffrer, donnez le mot de passe utilisé lors du chiffrement")
-password = input("Mot de passe: ").encode("ascii")
+password = getpass("Mot de passe (le mot de passe est invisible à l'écran mais il s'écrit bien): ").encode("ascii")
 salt = "killer".encode("ascii")
 kdf = PBKDF2HMAC(
     algorithm=hashes.SHA256(),
